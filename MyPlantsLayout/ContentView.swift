@@ -8,19 +8,36 @@
 import SwiftUI
 
 struct ContentView: View {
-    var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+  @State var selectedTab: TabItems = .home
+  
+  var body: some View {
+    VStack {
+      CustomTabBar { item in
+        getTabView(type: item)
+      }
+    }
+    .ignoresSafeArea(edges: .bottom)
+  }
+  
+  @ViewBuilder
+    func getTabView(type: TabItems) -> some View {
+        switch type {
+        case .home:
+            ColorStaly()
+        case .plants:
+          ShadowStyle()
+        case .basket:
+          FontsStyle()
+        case .heart:
+          ColorStaly()
+        case .person:
+          SystemIcons()
         }
-        .padding()
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
-    }
+  static var previews: some View {
+    ContentView()
+  }
 }

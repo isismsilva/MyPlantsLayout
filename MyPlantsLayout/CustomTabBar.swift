@@ -25,7 +25,7 @@ struct CustomTabBar<Content: View>: View {
         }
         .padding()
         .background(
-          TabBarShape(tabHeight: 30)
+          TabBarShape(tabHeight: 0)
             .centralShadow()
             .foregroundColor(.backgroundTheme)
         )
@@ -36,18 +36,10 @@ struct CustomTabBar<Content: View>: View {
   
   @ViewBuilder
   func tabBarItem(item: TabItems, isSelected: Bool) -> some View {
-    if item == .basket {
-      Button { selectedItem = item } label: {
-        IconImage(icon: item.icon)
-      }
-      .buttonStyle(ButtonStyles.RoundedButtonStyle(itemsCount: 2))
-      .padding(.bottom, 40)
-    } else {
-      Button { selectedItem = item } label: {
-        IconImage(icon: item.icon)
-      }
-      .buttonStyle(ButtonStyles.TabBarIconStyle(item: item, isSelected: isSelected))
+    Button { selectedItem = item } label: {
+      IconImage(icon: item.icon)
     }
+    .tabBarItem(item: item, isSelected: isSelected)
   }
 }
 

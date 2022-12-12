@@ -20,10 +20,10 @@ struct ButtonsStyles: View {
             .buttonStyle(ButtonStyles.RoundedButtonStyle(itemsCount: nil))
           
           Button {} label: { IconImage(icon: .person) }
-            .buttonStyle(ButtonStyles.TabBarIconStyle(item: .heart, isSelected: true))
+            .buttonStyle(ButtonStyles.IconButtonStyle(item: .heart, isSelected: true))
           
           Button {} label: { IconImage(icon: .heart) }
-            .buttonStyle(ButtonStyles.TabBarIconStyle(item: .heart, isSelected: false))
+            .buttonStyle(ButtonStyles.IconButtonStyle(item: .heart, isSelected: false))
         }
         
         Text("Neumorphic Buttons")
@@ -59,7 +59,7 @@ struct ButtonsStyles: View {
           .buttonStyle(ButtonStyles.PlainButtonStyle())
         }
       }
-      .navigationTitle("Buttons Style")
+      .navigationTitle("Buttons Catalog")
     }
   }
 }
@@ -140,7 +140,7 @@ enum ButtonStyles {
     }
   }
   
-  struct TabBarIconStyle: ButtonStyle {
+  struct IconButtonStyle: ButtonStyle {
     let item: TabItems
     let isSelected: Bool
     
@@ -158,9 +158,32 @@ enum ButtonStyles {
   }
 }
 
+extension View {
+  func tabBarItem(item: TabItems, isSelected: Bool) -> some View {
+    modifier(ButtonsModifiers.TabBarButton(item: item, isSelected: isSelected))
+  }
+}
+
+enum ButtonsModifiers {
+  struct TabBarButton: ViewModifier {
+    let item: TabItems
+    let isSelected: Bool
+    
+    @ViewBuilder
+    func body(content: Content) -> some View {
+      if item == .basket {
+        content
+          .buttonStyle(ButtonStyles.RoundedButtonStyle(itemsCount: 2))
+      } else {
+        content
+          .buttonStyle(ButtonStyles.IconButtonStyle(item: item, isSelected: isSelected))
+      }
+    }
+  }
+}
+
 struct ButtonsStyles_Previews: PreviewProvider {
   static var previews: some View {
     ButtonsStyles()
   }
 }
-

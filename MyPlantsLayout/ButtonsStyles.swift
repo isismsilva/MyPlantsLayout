@@ -42,7 +42,8 @@ struct ButtonsStyles: View {
           
           Button {} label: {
             HStack {
-              Text("View cart").bodyFont()
+              Text("View cart")
+                .customFont(.bodyFontStyle)
               IconImage(icon: .right)
             }
           }
@@ -111,7 +112,7 @@ enum ButtonStyles {
   struct PlainButtonStyle: ButtonStyle {
     func makeBody(configuration: Configuration) -> some View {
       configuration.label
-        .textFieldFont()
+        .customFont(.textInputFontStyle)
         .scaleEffect(configuration.isPressed ? 0.8 : 1)
         .foregroundColor(.primaryColor)
     }

@@ -16,7 +16,7 @@ struct SystemIcons: View {
           HStack(spacing: 42) {
             IconImage(icon: image)
             Text(image.name)
-              .bodyFont()
+              .customFont(.bodyFontStyle)
           }
         }
       }

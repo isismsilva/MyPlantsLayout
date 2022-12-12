@@ -11,72 +11,54 @@ struct FontsStyle: View {
     var body: some View {
       VStack(spacing: 20) {
         Text("Title")
-          .titleFont()
-          .foregroundColor(.fontDark)
+          .customFont(.titleFontStyle)
         
         Text("Body")
-          .bodyFont()
+          .customFont(.bodyFontStyle)
           .foregroundColor(.fontLight)
         
         Text("Body Bold")
-          .bodyBoldFont()
+          .customFont(.bodyBoldFontStyle)
           .foregroundColor(.fontDark)
         
         Text("System")
-          .textFieldFont()
+          .customFont(.textInputFontStyle)
           .foregroundColor(.primaryColor)
-        
       }
     }
 }
 
 extension View {
-  func titleFont() -> some View {
-    modifier(CustomFonts.TitleFontStyle())
+  func customFont(_ font: CustomFonts) -> some View {
+    modifier(CustomFont(font: font))
   }
-  
-  func bodyFont() -> some View {
-    modifier(CustomFonts.BodyFontStyle())
-  }
-  
-  func bodyBoldFont() -> some View {
-    modifier(CustomFonts.BodyBoldFontStyle())
-  }
-  
-  func textFieldFont() -> some View {
-    modifier(CustomFonts.TextInputFontStyle())
+}
+
+struct CustomFont: ViewModifier {
+  let font: CustomFonts
+  func body(content: Content) -> some View {
+    content.font(font.type)
   }
 }
 
 enum CustomFonts {
   static let fontName = "Helvetica"
   
-  struct TitleFontStyle: ViewModifier {
-    func body(content: Content) -> some View {
-      content
-        .font(.custom(fontName, size: 24, relativeTo: .title))
-    }
-  }
+  case titleFontStyle
+  case bodyFontStyle
+  case bodyBoldFontStyle
+  case textInputFontStyle
   
-  struct BodyFontStyle: ViewModifier {
-    func body(content: Content) -> some View {
-      content
-        .font(.custom(fontName, size: 16, relativeTo: .body))
-    }
-  }
-  
-  struct BodyBoldFontStyle: ViewModifier {
-    func body(content: Content) -> some View {
-      content
-        .font(.custom(fontName, size: 16, relativeTo: .body))
-        .fontWeight(.bold)
-    }
-  }
-  
-  struct TextInputFontStyle: ViewModifier {
-    func body(content: Content) -> some View {
-      content
-        .font(.system(size: 16))
+  var type: Font {
+    switch self {
+    case .titleFontStyle:
+      return Font.custom(CustomFonts.fontName, size: 24, relativeTo: .title)
+    case .bodyFontStyle:
+      return Font.custom(CustomFonts.fontName, size: 16, relativeTo: .body)
+    case .bodyBoldFontStyle:
+      return Font.custom(CustomFonts.fontName, size: 16, relativeTo: .body)
+    case .textInputFontStyle:
+      return Font.system(size: 16)
     }
   }
 }

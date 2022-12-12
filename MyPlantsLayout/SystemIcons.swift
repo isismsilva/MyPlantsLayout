@@ -13,7 +13,6 @@ struct SystemIcons: View {
     NavigationView {
       List {
         ForEach(IconImage.Icons.allCases, id: \.self) { image in
-          
           HStack(spacing: 42) {
             IconImage(icon: image)
             Text(image.name)
@@ -31,10 +30,8 @@ struct IconImage: View {
   
   var body: some View {
     Image(systemName: icon.rawValue)
-      .resizable()
       .frame(width: 20, height: 20)
       .aspectRatio(contentMode: .fit)
-      .foregroundColor(.iconColor)
   }
   
   enum Icons: String, CaseIterable {

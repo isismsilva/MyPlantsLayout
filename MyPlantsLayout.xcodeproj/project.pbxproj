@@ -15,7 +15,7 @@
 		388E4CFB29453FFA009E02A8 /* ButtonsStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 388E4CFA29453FFA009E02A8 /* ButtonsStyles.swift */; };
 		388E4CFD29454ECB009E02A8 /* CustomTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 388E4CFC29454ECB009E02A8 /* CustomTabBar.swift */; };
 		388E4CFF29458578009E02A8 /* TabBarShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 388E4CFE29458578009E02A8 /* TabBarShape.swift */; };
-		388E4D012946327E009E02A8 /* ColorStaly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 388E4D002946327E009E02A8 /* ColorStaly.swift */; };
+		388E4D012946327E009E02A8 /* ColorsStale.swift in Sources */ = {isa = PBXBuildFile; fileRef = 388E4D002946327E009E02A8 /* ColorsStale.swift */; };
 		388E4D032946A4BD009E02A8 /* ShadowStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 388E4D022946A4BD009E02A8 /* ShadowStyle.swift */; };
 		388E4D062946B9C7009E02A8 /* SystemIcons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 388E4D052946B9C7009E02A8 /* SystemIcons.swift */; };
 /* End PBXBuildFile section */
@@ -30,7 +30,7 @@
 		388E4CFA29453FFA009E02A8 /* ButtonsStyles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonsStyles.swift; sourceTree = "<group>"; };
 		388E4CFC29454ECB009E02A8 /* CustomTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBar.swift; sourceTree = "<group>"; };
 		388E4CFE29458578009E02A8 /* TabBarShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarShape.swift; sourceTree = "<group>"; };
-		388E4D002946327E009E02A8 /* ColorStaly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorStaly.swift; sourceTree = "<group>"; };
+		388E4D002946327E009E02A8 /* ColorsStale.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorsStale.swift; sourceTree = "<group>"; };
 		388E4D022946A4BD009E02A8 /* ShadowStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowStyle.swift; sourceTree = "<group>"; };
 		388E4D052946B9C7009E02A8 /* SystemIcons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemIcons.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -69,13 +69,13 @@
 				388E4CEA29453902009E02A8 /* MyPlantsLayoutApp.swift */,
 				388E4CEC29453902009E02A8 /* ContentView.swift */,
 				388E4CF829453931009E02A8 /* FontsStyle.swift */,
-				388E4CEE29453907009E02A8 /* Assets.xcassets */,
-				388E4CF029453907009E02A8 /* Preview Content */,
 				388E4CFA29453FFA009E02A8 /* ButtonsStyles.swift */,
 				388E4D052946B9C7009E02A8 /* SystemIcons.swift */,
 				388E4CFC29454ECB009E02A8 /* CustomTabBar.swift */,
-				388E4D002946327E009E02A8 /* ColorStaly.swift */,
+				388E4D002946327E009E02A8 /* ColorsStale.swift */,
 				388E4D022946A4BD009E02A8 /* ShadowStyle.swift */,
+				388E4CEE29453907009E02A8 /* Assets.xcassets */,
+				388E4CF029453907009E02A8 /* Preview Content */,
 			);
 			path = MyPlantsLayout;
 			sourceTree = "<group>";
@@ -166,7 +166,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				388E4D012946327E009E02A8 /* ColorStaly.swift in Sources */,
+				388E4D012946327E009E02A8 /* ColorsStale.swift in Sources */,
 				388E4CED29453902009E02A8 /* ContentView.swift in Sources */,
 				388E4CFF29458578009E02A8 /* TabBarShape.swift in Sources */,
 				388E4D032946A4BD009E02A8 /* ShadowStyle.swift in Sources */,

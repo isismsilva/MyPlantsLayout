@@ -24,20 +24,29 @@ struct CustomTabBar<Content: View>: View {
           }
         }
         .padding()
-        .background(TabBarShape(tabHeight: 30).centralShadow())
-        .foregroundColor(.backgroundTheme)
+        .background(
+          TabBarShape(tabHeight: 30)
+            .centralShadow()
+            .foregroundColor(.backgroundTheme)
+        )
+        
       }
     }
   }
   
   @ViewBuilder
   func tabBarItem(item: TabItems, isSelected: Bool) -> some View {
-    Button { selectedItem = item } label: {
-      if item == .basket {
-        IconImage(icon: item.icon).roundedItem(itemsCount: 1).padding(.bottom, 40)
-      } else {
-        IconImage(icon: item.icon).tabIcon(item: item, isSelected: isSelected)
+    if item == .basket {
+      Button { selectedItem = item } label: {
+        IconImage(icon: item.icon)
       }
+      .buttonStyle(ButtonStyles.RoundedButtonStyle(itemsCount: 2))
+      .padding(.bottom, 40)
+    } else {
+      Button { selectedItem = item } label: {
+        IconImage(icon: item.icon)
+      }
+      .buttonStyle(ButtonStyles.TabBarIconStyle(item: item, isSelected: isSelected))
     }
   }
 }

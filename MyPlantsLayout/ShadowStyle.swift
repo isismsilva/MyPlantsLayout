@@ -51,8 +51,8 @@ enum CustomShadows {
   struct NeomorphicShadow: ViewModifier {
     func body(content: Content) -> some View {
       content
-        .shadow(color: .neomorphicShadowLight, radius: 10, x: -2, y: -2)
-        .shadow(color: .neomorphicShadowDark, radius: 10, x: 2, y: 2)
+        .shadow(color: .neomorphicShadowLight, radius: 16, x: -4, y: -6)
+        .shadow(color: .neomorphicShadowDark, radius: 4, x: 4, y: 4)
     }
   }
   

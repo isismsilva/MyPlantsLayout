@@ -1,5 +1,5 @@
 //
-//  ColorStaly.swift
+//  ColorStale.swift
 //  MyPlantsLayout
 //
 //  Created by Isis Silva on 12/11/22.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ColorStaly: View {
+struct ColorsStale: View {
   var body: some View {
     let shape = RoundedRectangle(cornerRadius: 20).frame(width: 100, height: 100)
     
@@ -40,7 +40,7 @@ struct ColorStaly: View {
           shape.foregroundColor(.iconColor)
         }
       }
-      .navigationTitle("Color Catalog")
+      .navigationTitle("Colors Catalog")
     }
   }
 }
@@ -73,7 +73,7 @@ extension Color {
   )
   
   static let primaryLinearGradient = LinearGradient(
-    colors: [.primaryGradientLight, .primaryGradientDark],
+    colors: [.primaryGradientDark, .primaryGradientLight],
     startPoint: .topLeading,
     endPoint: .bottomTrailing
   )
@@ -82,6 +82,6 @@ extension Color {
 
 struct ColorStaly_Previews: PreviewProvider {
   static var previews: some View {
-    ColorStaly()
+    ColorsStale()
   }
 }

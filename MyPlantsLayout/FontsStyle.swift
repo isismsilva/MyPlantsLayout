@@ -9,7 +9,6 @@ import SwiftUI
 
 struct FontsStyle: View {
     var body: some View {
-      
       VStack(spacing: 20) {
         Text("Title")
           .titleFont()
@@ -28,7 +27,6 @@ struct FontsStyle: View {
           .foregroundColor(.primaryColor)
         
       }
-    
     }
 }
 

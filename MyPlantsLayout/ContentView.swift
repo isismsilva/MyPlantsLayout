@@ -20,20 +20,20 @@ struct ContentView: View {
   }
   
   @ViewBuilder
-    func getTabView(type: TabItems) -> some View {
-        switch type {
-        case .home:
-            ColorStaly()
-        case .plants:
-          ShadowStyle()
-        case .basket:
-          FontsStyle()
-        case .heart:
-          ColorStaly()
-        case .person:
-          SystemIcons()
-        }
+  func getTabView(type: TabItems) -> some View {
+    switch type {
+    case .home:
+      ColorsStale()
+    case .plants:
+      ShadowStyle()
+    case .basket:
+      FontsStyle()
+    case .heart:
+      ButtonsStyles()
+    case .person:
+      SystemIcons()
     }
+  }
 }
 
 struct ContentView_Previews: PreviewProvider {
